@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Big Nitas Cheesecake | Artisanal Desserts</title>
+
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="stylesheet">
+<!-- RELIABLE ICON SOURCE: Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net">
+
+
+<style>
+:root{
+--bg:#FFFFE3;
+--pink:#FF88B9;
+--soft-pink:#F2D5E6;
+--lemon:#FFF2A6;
+--charcoal:#3B3B3B;
+}
+
+
+*{ margin:0; padding:0; box-sizing:border-box; }
+
+
+body{
+font-family:'Quicksand',sans-serif;
+background:var(--bg);
+color:var(--charcoal);
+scroll-behavior:smooth;
+}
+
+
+/* NAV */
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:1rem 10%;
+background:white;
+position:sticky;
+top:0;
+z-index:100;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
+}
+
+
+.logo{
+font-family:'Dancing Script',cursive;
+font-size:2.2rem;
+color:var(--pink);
+text-decoration:none;
+}
+
+
+.nav-links a{
+text-decoration:none;
+color:var(--charcoal);
+margin-left:25px;
+font-weight:700;
+transition:0.3s;
+}
+
+
+.nav-links a:hover{ color:var(--pink); }
+
+
+/* HERO */
+.hero{
+padding:100px 10%;
+text-align:center;
+background:linear-gradient(to bottom,#fff,var(--lemon));
+border-bottom-left-radius:50px;
+border-bottom-right-radius:50px;
+}
+
+
+.hero h1{
+font-family:'Dancing Script',cursive;
+font-size:4.5rem;
+color:var(--pink);
+margin-bottom:10px;
+}
+
+
+.hero p{
+font-size:1.3rem;
+font-weight:600;
+color:#5b5562;
+max-width:700px;
+margin:0 auto 30px;
+line-height:1.4;
+}
+
+
+.hero-btn{
+background:var(--pink);
+color:white;
+padding:15px 40px;
+border-radius:50px;
+text-decoration:none;
+font-weight:700;
+font-size:1.1rem;
+box-shadow:0 4px 15px rgba(255,136,185,0.4);
+}
+
+
+/* MENU GRID */
+.container{ padding:80px 10%; text-align:center; }
+.section-title{ font-family:'Dancing Script',cursive; font-size:3.5rem; margin-bottom:50px; color:var(--charcoal); }
+.grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:30px; }
+
+
+.card{
+background:white;
+border-radius:25px;
+overflow:hidden;
+box-shadow:0 8px 20px rgba(0,0,0,0.05);
+transition:0.3s;
+display: flex;
+flex-direction: column;
+}
+
+
+.card:hover{ transform:translateY(-10px); border:2px solid var(--soft-pink); }
+.card-image{ width:100%; height:220px; object-fit:cover; background:var(--soft-pink); }
+.card-content{ padding:20px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+.card-content h3{ color:var(--pink); margin-bottom:8px; font-size:1.4rem; }
+.price{ font-weight:800; font-size:1.2rem; display: block; margin-bottom: 15px; }
+
+
+.order-item-btn {
+   background: var(--soft-pink);
+   color: var(--charcoal);
+   padding: 10px;
+   border-radius: 12px;
+   font-weight: 700;
+   cursor: pointer;
+   border: none;
+   font-family: inherit;
+}
+
+
+.order-item-btn:hover { background: var(--pink); color: white; }
+
+
+/* REVIEWS */
+.reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 40px; }
+.review-card { background: white; padding: 30px; border-radius: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: left; border-bottom: 5px solid var(--lemon); }
+.stars { color: #FFD700; margin-bottom: 10px; }
+.review-author { font-weight: 800; color: var(--pink); }
+
+
+/* CONTACT & MAP */
+.contact-section{
+background:white;
+padding:50px 10%;
+margin:40px 10%;
+border-radius:40px;
+border:4px dashed var(--soft-pink);
+text-align:center;
+}
+
+
+.contact-info-text{ font-size:1.1rem; font-weight:600; line-height:1.8; margin-bottom:30px; }
+.map-wrapper { display: flex; justify-content: center; margin-top: 20px; }
+
+
+/* ORDER FORM & CALCULATOR */
+.order-container{ max-width:800px; margin:40px auto; background:white; padding:50px; border-radius:40px; box-shadow:0 15px 40px rgba(0,0,0,0.05); }
+.form-group{ margin-bottom:25px; display:flex; flex-direction:column; text-align:left; }
+.form-group label{ font-weight:700; margin-bottom:12px; color:var(--pink); }
+.checkbox-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
+.checkbox-item { display: flex; align-items: center; justify-content: space-between; border: 2px solid var(--lemon); padding: 12px 15px; border-radius: 12px; transition: background 0.5s; font-weight: 600; }
+.qty-input { width: 55px; padding: 5px; border: 2px solid var(--soft-pink); border-radius: 8px; text-align: center; font-weight: 700; font-family: inherit; }
+
+
+.total-display { background: var(--lemon); padding: 20px; border-radius: 15px; margin: 20px 0; font-size: 1.5rem; font-weight: 800; text-align: right; }
+.submit-btn{ width:100%; background:var(--pink); color:white; border:none; padding:18px; border-radius:50px; font-weight:700; cursor:pointer; font-size:1.1rem; transition: 0.3s; }
+.submit-btn:hover { background:#ff6da8; transform:scale(1.02); }
+
+
+/* FOOTER & SOCIALS */
+footer{ padding:40px; text-align:center; color:#aaa; font-weight:600; }
+.social-icons { margin-bottom: 20px; }
+.social-icons a { color: var(--pink); font-size: 2.2rem; margin: 0 15px; transition: 0.3s; display: inline-block; text-decoration: none; }
+.social-icons a:hover { color: var(--charcoal); transform: translateY(-5px); }
+
+
+@media (max-width: 768px) {
+   .navbar { padding: 1rem 5%; }
+   .hero h1 { font-size: 3rem; }
+   iframe { width: 100% !important; height: auto !important; }
+}
+</style>
+</head>
+
+
+<body>
+
+
+<nav class="navbar">
+<a href="#" class="logo">Big Nitas Cheesecake</a>
+<div class="nav-links">
+<a href="#menu">Menu</a>
+<a href="#reviews">Reviews</a>
+<a href="#order">Order</a>
+</div>
+</nav>
+
+
+<header class="hero">
+<h1>Big Nitas Cheesecake</h1>
+<p>“Heavenly Cheesecake Slices, Handcrafted with love & premium ingredients”</p>
+<a href="#order" class="hero-btn">Treat Yourself Today</a>
+</header>
+
+
+<main class="container" id="menu">
+<h2 class="section-title">Freshly Baked</h2>
+<div class="grid">
+   <div class="card">
+       <img src="creamycheesecake.png" class="card-image">
+       <div class="card-content">
+           <h3>Classic Signature Slice</h3>
+           <span class="price">$8.00</span>
+           <button class="order-item-btn" onclick="addToOrder('Classic Signature Slice')">Add to Order</button>
+       </div>
+   </div>
+   <div class="card">
+       <img src="strawberry.png" class="card-image">
+       <div class="card-content">
+           <h3>Strawberry Dream Slice</h3>
+           <span class="price">$10.00</span>
+           <button class="order-item-btn" onclick="addToOrder('Strawberry Dream Slice')">Add to Order</button>
+       </div>
+   </div>
+   <div class="card">
+       <img src="apple.png" class="card-image">
+       <div class="card-content">
+           <h3>Caramel Apple Slice</h3>
+           <span class="price">$9.00</span>
+           <button class="order-item-btn" onclick="addToOrder('Caramel Apple Slice')">Add to Order</button>
+       </div>
+   </div>
+   <div class="card">
+       <img src="oreo.png" class="card-image">
+       <div class="card-content">
+           <h3>Cookies & Cream Slice</h3>
+           <span class="price">$9.00</span>
+           <button class="order-item-btn" onclick="addToOrder('Cookies & Cream Slice')">Add to Order</button>
+       </div>
+   </div>
+   <div class="card">
+       <img src="brownie.png" class="card-image">
+       <div class="card-content">
+           <h3>Cheesecake Brownie</h3>
+           <span class="price">$5.50</span>
+           <button class="order-item-btn" onclick="addToOrder('Cheesecake Brownie')">Add to Order</button>
+       </div>
+   </div>
+   <div class="card">
+       <img src="cookie.png" class="card-image">
+       <div class="card-content">
+           <h3>Gourmet Cookie</h3>
+           <span class="price">$4.00</span>
+           <button class="order-item-btn" onclick="addToOrder('Gourmet Cookie')">Add to Order</button>
+       </div>
+   </div>
+</div>
+</main>
+
+
+<section class="container" id="reviews">
+   <h2 class="section-title">Sweet Words</h2>
+   <div class="reviews-grid">
+       <div class="review-card">
+           <div class="stars">★★★★★</div>
+           <p>"Best cheesecake in Louisville!"</p>
+           <span class="review-author">- Sarah M.</span>
+       </div>
+       <div class="review-card">
+           <div class="stars">★★★★★</div>
+           <p>"The crust is perfect and the filling is so creamy."</p>
+           <span class="review-author">- James D.</span>
+       </div>
+   </div>
+</section>
+
+
+<section class="contact-section">
+   <h2 class="section-title" style="font-size:2.8rem; margin-bottom:20px;">Visit Us</h2>
+   <div class="contact-info-text">
+       <p>1011 E Main St, Butchertown, Louisville, KY 40206</p>
+       <p><b>Phone:</b> +1 (502) 883-0022</p>
+       <p><b>Hours:</b> Fri 1 PM–6 PM | Sat 11 AM–2 PM | Sun 11 AM–1 PM</p>
+   </div>
+   <div class="map-wrapper">
+       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3133.0873683350155!2d-85.7357268252831!3d38.25427968439616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88697387a71a5b97%3A0xc271ce4556fca4a7!2sBig%20Nita's%20Cheesecakes!5e0!3m2!1sen!2sus!4v1773939035577!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+   </div>
+</section>
+
+
+<section class="container" id="order">
+<div class="order-container">
+<h2 class="section-title" style="font-size:2.5rem; margin-bottom:20px;">Order Request</h2>
+<form id="orderForm">
+   <div class="form-group">
+       <label>Full Name</label>
+       <input type="text" placeholder="Enter your name" required style="padding:15px; border:2px solid var(--lemon); border-radius:15px; font-family:inherit;">
+   </div>
+   <div class="checkbox-grid">
+       <div class="checkbox-item" id="item-Classic Signature Slice">
+           <div class="item-left"><input type="checkbox" class="item-check" data-price="8.00" value="Classic Signature Slice"> Classic Signature Slice</div>
+           <input type="number" class="qty-input" min="1" value="1">
+       </div>
+       <div class="checkbox-item" id="item-Strawberry Dream Slice">
+           <div class="item-left"><input type="checkbox" class="item-check" data-price="10.00" value="Strawberry Dream Slice"> Strawberry Dream Slice</div>
+           <input type="number" class="qty-input" min="1" value="1">
+       </div>
+       <div class="checkbox-item" id="item-Caramel Apple Slice">
+           <div class="item-left"><input type="checkbox" class="item-check" data-price="9.00" value="Caramel Apple Slice"> Caramel Apple Slice</div>
+           <input type="number" class="qty-input" min="1" value="1">
+       </div>
+       <div class="checkbox-item" id="item-Cookies & Cream Slice">
+           <div class="item-left"><input type="checkbox" class="item-check" data-price="9.00" value="Cookies & Cream Slice"> Cookies & Cream Slice</div>
+           <input type="number" class="qty-input" min="1" value="1">
+       </div>
+       <div class="checkbox-item" id="item-Cheesecake Brownie">
+           <div class="item-left"><input type="checkbox" class="item-check" data-price="5.50" value="Cheesecake Brownie"> Cheesecake Brownie</div>
+           <input type="number" class="qty-input" min="1" value="1">
+       </div>
+       <div class="checkbox-item" id="item-Gourmet Cookie">
+           <div class="item-left"><input type="checkbox" class="item-check" data-price="4.00" value="Gourmet Cookie"> Gourmet Cookie</div>
+           <input type="number" class="qty-input" min="1" value="1">
+       </div>
+   </div>
+  
+   <div class="total-display">Estimated Total: $<span id="totalPrice">0.00</span></div>
+  
+   <div class="form-group">
+       <label>Pickup Date</label>
+       <input type="date" required style="padding:15px; border:2px solid var(--lemon); border-radius:15px; font-family:inherit;">
+   </div>
+  
+   <button type="submit" class="submit-btn">Send Order Request</button>
+</form>
+</div>
+</section>
+
+
+<footer>
+   <div class="social-icons">
+       <a href="https://instagram.com" target="_blank"><i class="bi bi-instagram"></i></a>
+       <a href="https://facebook.com" target="_blank"><i class="bi bi-facebook"></i></a>
+       <a href="https://tiktok.com" target="_blank"><i class="bi bi-tiktok"></i></a>
+   </div>
+   <p>&copy; 2024 Big Nita's Cheesecakes. Louisville, KY.</p>
+</footer>
+
+
+<script>
+const totalSpan = document.getElementById('totalPrice');
+function calculateTotal() {
+   let total = 0;
+   document.querySelectorAll('.checkbox-item').forEach(row => {
+       const checkbox = row.querySelector('.item-check');
+       const qtyInput = row.querySelector('.qty-input');
+       if (checkbox.checked) {
+           total += parseFloat(checkbox.dataset.price) * parseInt(qtyInput.value || 0);
+       }
+   });
+   totalSpan.innerText = total.toFixed(2);
+}
+
+
+document.querySelectorAll('.item-check, .qty-input').forEach(el => {
+   el.addEventListener('change', calculateTotal);
+   el.addEventListener('input', calculateTotal);
+});
+
+
+function addToOrder(itemName) {
+   const checkbox = document.querySelector(`input[value="${itemName}"]`);
+   if (checkbox) {
+       checkbox.checked = true;
+       calculateTotal();
+       document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
+       const row = document.getElementById(`item-${itemName}`);
+       row.style.background = '#FFF2A6';
+       setTimeout(() => { row.style.background = '#fff'; }, 1500);
+   }
+}
+</script>
+</body>
+</html>
+
+
+
